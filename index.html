@@ -10,7 +10,14 @@
     --text:#2B3226; --muted:#7A8E6A; --accent:#6DAE3E; --gold:#E8A0A8; --ok:#7DB84A;
   }
   *{box-sizing:border-box}
-  html,body{margin:0;height:100%;overflow:hidden;background:var(--bg);color:var(--text);
+  html,body{margin:0;height:100%;overflow:hidden;background:
+    radial-gradient(ellipse 90% 60% at 10% 20%, rgba(170,220,130,0.55) 0%, transparent 65%),
+    radial-gradient(ellipse 70% 55% at 80% 75%, rgba(130,200,100,0.50) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 5% 85%,  rgba(230,155,160,0.30) 0%, transparent 55%),
+    radial-gradient(ellipse 45% 35% at 92% 10%, rgba(195,230,150,0.40) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 45% at 55% 50%, rgba(155,210,115,0.25) 0%, transparent 60%),
+    #f5f8f0;
+  color:var(--text);
     font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR","Malgun Gothic",system-ui,sans-serif}
   #root{height:100dvh;display:flex;flex-direction:column}
 
@@ -199,7 +206,7 @@
   <div id="top">
     <span class="meta">강원특별자치도 원주시 신림면 · 위성사진 기반 재구성</span>
     <div class="tabs">
-      <button id="tab3d" class="on">🗺 장소 안내</button>
+      <button id="tab3d" class="on">📍 장소 안내</button>
       <button id="tabPhoto">🎯 전체 프로그램</button>
       <button id="tabSched">📋 일정</button>
     </div>
@@ -1049,7 +1056,7 @@ var SPOTS = [
     tip:'포토존 ①과 함께 이용하세요!' },
   { id:'photo_shelter', nm:'쉼터존', sub:'헤세드 히브리어 + 타투 스티커', zone:'shelter',
     px:[490,470], mapPos:[35,92], img:'쉼터존1.png',
-    location:'벧엘관 옆 야외 쉼터', color:'#26C6DA', icon:'🪑',
+    location:'벧엘관 옆 야외 쉼터', color:'#26C6DA', icon:'⛱️',
     items:['헤세드 히브리어 포토존','헤세드 타투 스티커 체험','야외 의자 & 해먹 휴식'],
     tip:'타투 스티커 붙이고 물놀이 가면 분위기 UP!' },
   { id:'photo_indoor', nm:'키캡&키링(대식당 뒤)', sub:'거울 셀카 + 키캡 키링', zone:'shelter',
