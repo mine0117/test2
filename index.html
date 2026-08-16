@@ -177,14 +177,14 @@
   #mapWrap{position:absolute;inset:0;overflow:hidden;background:#0a0e13;display:flex;align-items:center;justify-content:center;cursor:grab}
   #mapWrap.grabbing{cursor:grabbing}
   #mapInner{width:100%;height:100%;transform-origin:center center;will-change:transform;position:relative}
-  #mapImg{max-width:100%;max-height:100%;width:auto;height:100%;object-fit:contain;display:block;user-select:none;-webkit-user-select:none;position:relative}
+  #mapImg{height:100%;width:auto;max-width:none;display:block;user-select:none;-webkit-user-select:none;position:relative}
   #mapPins{position:absolute;inset:0;pointer-events:none}
   .map-pin{position:absolute;transform:translate(-50%,-100%);cursor:pointer;pointer-events:auto;
     display:flex;flex-direction:column;align-items:center;transition:transform .15s;z-index:10;
     padding:6px 4px 0;margin:-6px -4px 0}
   .map-pin:hover,.map-pin.sel{transform:translate(-50%,-100%) scale(1.2)}
-  .map-pin .pin-dot{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;
-    justify-content:center;font-size:20px;box-shadow:0 2px 8px rgba(0,0,0,.6);
+  .map-pin .pin-dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;
+    justify-content:center;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,.6);
     border:2px solid rgba(255,255,255,.7)}
   .map-pin.sel .pin-dot{box-shadow:0 0 0 3px rgba(255,255,255,.5),0 2px 10px rgba(0,0,0,.7)}
   .map-pin .pin-tail{width:2px;height:7px;background:rgba(255,255,255,.8);margin:0 auto}
@@ -1024,33 +1024,33 @@ function setMode(m){
    mx(px[0]) = (px[0]-550)*0.22,  mz(px[1]) = (px[1]-650)*0.22  */
 var SPOTS = [
   { id:'water_main', nm:'물놀이존', sub:'다시 사랑하水', zone:'water',
-    px:[815,914], mapPos:[27,55], img:'물놀이존.jpg',
+    px:[815,914], mapPos:[45,60], img:'물놀이존.jpg',
     location:'잔디 운동장', color:'#2196F3', icon:'🌊',
     items:['에어바운스 워터슬라이드 × 2','워터캐논 × 2','기본 풀장 × 1'],
     schedule:'1부 14:10–15:00 (2·3교구) / 2부 15:10–16:00 (1·4교구)',
     notice:'입수 전 준비운동 필수' },
   { id:'photo_trail', nm:'포토존 ①', sub:'헤세드 액자 프레임', zone:'photo',
-    px:[700,350], mapPos:[40,93], img:'포토존.jpg',
+    px:[700,350], mapPos:[54,90], img:'포토존.jpg',
     location:'산책로', color:'#E91E63', icon:'📸',
     items:['헤세드 액자 프레임 설치'],
     tip:'프레임 안에 서서 팀원들과 단체 사진!' },
   { id:'photo_2', nm:'포토존②', sub:'헤세드 포토 프레임', zone:'photo',
-    px:[700,350], mapPos:[24,77], img:'포토존.jpg',
+    px:[700,350], mapPos:[37,75], img:'포토존.jpg',
     location:'쉼터존 인근', color:'#FFC107', icon:'📷',
     items:['헤세드 포토 프레임 체험'],
     tip:'포토존 ①과 함께 이용하세요!' },
   { id:'photo_shelter', nm:'쉼터존', sub:'헤세드 히브리어 + 타투 스티커', zone:'shelter',
-    px:[490,470], mapPos:[27,90], img:'쉼터존.jpg',
+    px:[490,470], mapPos:[40,90], img:'쉼터존.jpg',
     location:'벧엘관 옆 야외 쉼터', color:'#26C6DA', icon:'🪑',
     items:['헤세드 히브리어 포토존','헤세드 타투 스티커 체험','야외 의자 & 해먹 휴식'],
     tip:'타투 스티커 붙이고 물놀이 가면 분위기 UP!' },
   { id:'photo_indoor', nm:'키캡&키링(대식당 뒤)', sub:'거울 셀카 + 키캡 키링', zone:'shelter',
-    px:[800,680], mapPos:[50,18], img:'키링.jpg',
+    px:[800,680], mapPos:[60,18], img:'키링.jpg',
     location:'대식당 뒤 실내', color:'#26C6DA', icon:'⌨️',
     items:['거울 셀카 & 헤세드 포토존','키캡 키링 만들기','4가지 디자인 중 선택 후 조립'],
     tip:'키캡은 준비위원에게 직접 받아서 조립!' },
   { id:'board_game', nm:'보드게임존(구식당)', sub:'실내에서 시원하게!', zone:'board',
-    px:[750,510], mapPos:[65,65],
+    px:[750,510], mapPos:[77,65],
     location:'구식당 (카페 병행 운영)', color:'#FF9800', icon:'🎲',
     items:['보드게임 & 나눔카드 대여','관리대장 작성 후 대여 · 반납 필수','카페 정상 운영'],
     }
@@ -1270,10 +1270,10 @@ function positionMapPins(){
   var wW = wrap.clientWidth, wH = wrap.clientHeight;
   var nW = img.naturalWidth  || 507;
   var nH = img.naturalHeight || 724;
-  /* contain 렌더 크기 계산 */
-  var scale = Math.min(wW/nW, wH/nH);
-  var rW = nW * scale, rH = nH * scale;
-  var offX = (wW - rW) / 2, offY = (wH - rH) / 2;
+  /* 높이 기준 렌더 크기 계산 */
+  var scale = wH / nH;
+  var rW = nW * scale, rH = wH;
+  var offX = (wW - rW) / 2, offY = 0;
   pins.forEach(function(pin){
     var lx = parseFloat(pin.dataset.lx);
     var ly = parseFloat(pin.dataset.ly);
@@ -1284,9 +1284,22 @@ function positionMapPins(){
   });
 }
 
-document.getElementById('mapImg') && document.getElementById('mapImg').addEventListener('load', positionMapPins);
-window.addEventListener('resize', positionMapPins);
+function syncInfoToMapDark(){
+  if(window.innerWidth > 640) return;
+  var wrap = document.getElementById('mapWrap');
+  var img  = document.getElementById('mapImg');
+  var info = document.getElementById('info');
+  if(!wrap || !img || !info) return;
+  var wW = wrap.clientWidth, wH = wrap.clientHeight;
+  var nW = img.naturalWidth  || 507, nH = img.naturalHeight || 724;
+  info.style.minHeight = '';
+}
+
+document.getElementById('mapImg') && document.getElementById('mapImg').addEventListener('load', function(){ positionMapPins(); syncInfoToMapDark(); });
+window.addEventListener('resize', function(){ positionMapPins(); syncInfoToMapDark(); });
 buildMapPins();
+syncInfoToMapDark();
+document.getElementById('info').style.display = 'none';
 
 /* === TIMELINE DATA === */
 var TIMELINE = [
