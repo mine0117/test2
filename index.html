@@ -6,8 +6,8 @@
 <title>명성 수련회 · 장소 & 프로그램 안내</title>
 <style>
   :root{
-    --bg:#0c1015; --panel:rgba(16,21,28,.92); --line:rgba(255,255,255,.10);
-    --text:#e9eef5; --muted:#8fa0b4; --accent:#5eb0ff; --gold:#ffcb47; --ok:#3ddc97;
+    --bg:#EEF1E8; --panel:rgba(255,255,255,.93); --line:rgba(100,160,65,.22);
+    --text:#2B3226; --muted:#7A8E6A; --accent:#6DAE3E; --gold:#E8A0A8; --ok:#7DB84A;
   }
   *{box-sizing:border-box}
   html,body{margin:0;height:100%;overflow:hidden;background:var(--bg);color:var(--text);
@@ -15,14 +15,14 @@
   #root{height:100dvh;display:flex;flex-direction:column}
 
   /* top bar */
-  #top{display:flex;align-items:center;gap:14px;padding:9px 14px;background:#0f141b;
+  #top{display:flex;align-items:center;gap:14px;padding:9px 14px;background:#E6EBE0;
     border-bottom:1px solid var(--line);flex:0 0 auto;z-index:40}
   #top h1{font-size:14px;margin:0;font-weight:700;letter-spacing:-.2px;white-space:nowrap}
   #top .meta{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .tabs{margin-left:auto;display:flex;gap:4px;background:#161d26;padding:3px;border-radius:9px}
+  .tabs{margin-left:auto;display:flex;gap:4px;background:rgba(195,218,170,.4);padding:3px;border-radius:9px}
   .tabs button{background:none;border:none;color:var(--muted);font:inherit;font-size:12.5px;
     padding:6px 13px;border-radius:7px;cursor:pointer}
-  .tabs button.on{background:#28323f;color:#fff;font-weight:600}
+  .tabs button.on{background:#6DAE3E;color:#fff;font-weight:600}
 
   /* views */
   #views{flex:1;position:relative;min-height:0}
@@ -35,35 +35,35 @@
   /* labels */
   #labels{position:absolute;inset:0;pointer-events:none;overflow:hidden}
   .lb{position:absolute;transform:translate(-50%,-100%);white-space:nowrap;pointer-events:auto;cursor:pointer;
-    font-size:11.5px;font-weight:700;color:#fff;text-shadow:0 1px 3px #000,0 0 8px rgba(0,0,0,.9);
-    padding:2px 7px;border-radius:20px;background:rgba(10,14,19,.5);border:1px solid rgba(255,255,255,.14);
+    font-size:11.5px;font-weight:700;color:#2B3226;text-shadow:0 1px 2px rgba(255,255,255,.7);
+    padding:2px 7px;border-radius:20px;background:rgba(255,255,255,.80);border:1px solid rgba(100,160,65,.28);
     backdrop-filter:blur(3px);transition:opacity .2s}
-  .lb:hover{background:rgba(94,176,255,.35);border-color:var(--accent)}
+  .lb:hover{background:rgba(109,174,62,.25);border-color:var(--accent)}
   .lb.est{color:var(--gold);border-style:dashed}
-  .lb.area{font-weight:500;font-size:10.5px;color:#cfe0f0;background:transparent;border:none;
-    text-shadow:0 1px 3px #000,0 0 8px #000}
+  .lb.area{font-weight:500;font-size:10.5px;color:#4A6E35;background:transparent;border:none;
+    text-shadow:0 1px 2px rgba(255,255,255,.8)}
 
   /* hud */
   .hud{position:absolute;background:var(--panel);border:1px solid var(--line);border-radius:11px;
     backdrop-filter:blur(10px)}
   #ctrl{top:12px;right:12px;padding:9px;display:flex;flex-direction:column;gap:7px;width:184px;z-index:20}
   #ctrl .grp{display:flex;gap:5px}
-  #ctrl button{flex:1;background:#1b2430;border:1px solid var(--line);color:var(--text);
+  #ctrl button{flex:1;background:rgba(235,242,225,.85);border:1px solid var(--line);color:var(--text);
     font:inherit;font-size:11.5px;padding:7px 4px;border-radius:7px;cursor:pointer;transition:.15s}
   #ctrl button:hover{border-color:var(--accent)}
-  #ctrl button.on{background:var(--accent);border-color:var(--accent);color:#06131f;font-weight:700}
+  #ctrl button.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
   #ctrl .cap{font-size:10px;color:var(--muted);letter-spacing:.06em;font-weight:700;margin:2px 0 -2px}
 
   #info{left:12px;top:12px;width:270px;max-height:calc(100% - 24px);overflow-y:auto;padding:13px 14px;z-index:20;transition:max-height .3s ease}
   #info h2{margin:0 0 3px;font-size:14.5px}
   #info .sub{font-size:11px;color:var(--muted);margin:0 0 10px;line-height:1.5}
-  #info .desc{font-size:12.5px;line-height:1.65;color:#d5dee9}
+  #info .desc{font-size:12.5px;line-height:1.65;color:#3A4535}
   .chip{display:inline-block;font-size:10px;padding:2px 7px;border-radius:20px;margin:0 4px 4px 0;
-    background:rgba(94,176,255,.15);color:var(--accent)}
-  .chip.g{background:rgba(255,203,71,.15);color:var(--gold)}
+    background:rgba(109,174,62,.15);color:var(--accent)}
+  .chip.g{background:rgba(232,160,168,.18);color:var(--gold)}
   .blist{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
   .blist .it{display:flex;align-items:center;gap:8px;padding:6px 7px;border-radius:7px;cursor:pointer;font-size:12px}
-  .blist .it:hover{background:#1d2733}
+  .blist .it:hover{background:rgba(109,174,62,.12)}
   .blist .it .sw{width:9px;height:9px;border-radius:2px;flex:0 0 9px}
 
   #help{left:12px;bottom:12px;padding:8px 12px;font-size:11px;color:var(--muted);line-height:1.7;z-index:20;max-width:330px}
@@ -71,7 +71,7 @@
   #compass{right:12px;bottom:12px;width:56px;height:56px;z-index:20;display:flex;align-items:center;justify-content:center}
   #compass svg{width:40px;height:40px}
   #banner{position:absolute;left:50%;top:10px;transform:translateX(-50%);z-index:30;
-    background:rgba(10,14,19,.78);border:1px solid rgba(255,203,71,.4);color:var(--gold);
+    background:rgba(240,248,230,.90);border:1px solid rgba(109,174,62,.45);color:var(--accent);
     font-size:11px;padding:5px 12px;border-radius:20px;backdrop-filter:blur(6px);pointer-events:none}
 
 
@@ -85,11 +85,11 @@
   @media (max-width:640px){
     /* 탭 → 하단 네비게이션 */
     #root{flex-direction:column-reverse}
-    #top{padding:0 4px env(safe-area-inset-bottom,0px);border-bottom:none;border-top:1px solid var(--line);min-height:54px;align-items:stretch}
+    #top{padding:0 4px env(safe-area-inset-bottom,0px);border-bottom:none;border-top:1px solid var(--line);min-height:54px;align-items:stretch;background:#E6EBE0}
     #top h1,#top .meta{display:none}
     .tabs{margin-left:0;flex:1;background:transparent;border-radius:0;padding:4px 2px;gap:2px;justify-content:space-around;align-items:stretch;overflow-x:visible}
     .tabs button{flex:1;font-size:11px;padding:6px 4px;min-height:48px;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;line-height:1.2;white-space:normal}
-    .tabs button.on{background:#1e2d3d}
+    .tabs button.on{background:rgba(109,174,62,.18);color:var(--accent)}
     /* 정보 패널 → 하단 시트 */
     #info{left:0;right:0;bottom:0;top:auto;width:auto;height:auto;max-height:50vh;border-radius:16px 16px 0 0;border-left:none;border-right:none;border-bottom:none;padding:0 0 env(safe-area-inset-bottom,12px);overflow-y:auto;-webkit-overflow-scrolling:touch;transition:max-height .3s ease}
     #info::before{display:none}
@@ -97,10 +97,10 @@
     #info .desc{padding:0}
     #info .sc-head{padding:10px 14px 6px}
     #info .sc-body{padding:0 14px 12px}
-    #info .sc-img{height:160px}
+    #info .sc-img{height:auto}
     #info .sc-loc{padding:0 14px 6px}
-    #infoHandle{width:100%;padding:10px 0 6px;display:flex;justify-content:center;align-items:center;cursor:ns-resize;flex-shrink:0;touch-action:none;position:sticky;top:0;z-index:2;background:rgba(16,21,28,.98);border-radius:16px 16px 0 0}
-    #infoHandle::after{content:'';display:block;width:40px;height:4px;background:rgba(255,255,255,.2);border-radius:2px}
+    #infoHandle{width:100%;padding:10px 0 6px;display:flex;justify-content:center;align-items:center;cursor:ns-resize;flex-shrink:0;touch-action:none;position:sticky;top:0;z-index:2;background:rgba(245,248,240,.98);border-radius:16px 16px 0 0}
+    #infoHandle::after{content:'';display:block;width:40px;height:4px;background:rgba(100,160,65,.35);border-radius:2px}
     /* 목록 터치 타깃 */
     .blist{margin-top:8px;padding:0 14px 4px}
     .blist .it{min-height:44px;padding:8px 7px;font-size:13px}
@@ -109,7 +109,7 @@
     /* 3D 레이블 */
     .lb{font-size:10px;padding:2px 7px}
     /* 프로그램·일정 카드 */
-    .sc-img{height:140px}
+    .sc-img{height:auto}
     .gview-inner{padding:10px 12px;gap:8px}
     .tl-card{padding:9px 10px;gap:8px}
     .tl-time{flex:0 0 40px;font-size:11px}
@@ -131,7 +131,7 @@
   .gview-inner{padding:12px 14px;display:flex;flex-direction:column;gap:10px}
   .spot-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
   .spot-bar{height:4px;width:100%}
-  .sc-img{width:100%;height:150px;object-fit:cover;display:block}
+  .sc-img{width:100%;height:auto;display:block}
   .sc-head{display:flex;align-items:flex-start;gap:10px;padding:12px 14px 6px}
   .sc-icon{font-size:24px;line-height:1;flex:0 0 auto;padding-top:2px}
   .sc-title{font-size:14px;font-weight:700;margin:0 0 1px}
@@ -140,44 +140,45 @@
   .sc-body{padding:0 14px 12px}
   .zone-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;margin-bottom:8px}
   .sc-items{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
-  .sc-items li{font-size:12px;color:#c5d4e3;padding-left:12px;position:relative}
+  .sc-items li{font-size:12px;color:#3A4535;padding-left:12px;position:relative}
   .sc-items li::before{content:'·';position:absolute;left:2px;color:var(--muted)}
-  .sc-tip{font-size:11.5px;color:var(--gold);background:rgba(255,203,71,.08);border-radius:8px;padding:6px 10px;margin-top:8px}
+  .sc-tip{font-size:11.5px;color:var(--gold);background:rgba(232,160,168,.12);border-radius:8px;padding:6px 10px;margin-top:8px}
   .sc-staff{font-size:11px;color:var(--muted);margin-top:8px}
   .sc-notice{font-size:11px;color:#ff6b6b;margin-top:6px}
   .sc-schedule{font-size:11.5px;color:var(--accent);margin-top:8px;font-weight:600}
   .sched-filters{display:flex;gap:6px;padding:10px 14px;overflow-x:auto;scrollbar-width:none;flex:0 0 auto;border-bottom:1px solid var(--line)}
   .sched-filters::-webkit-scrollbar{display:none}
   .sf-chip{flex:0 0 auto;font:inherit;font-size:12px;padding:5px 13px;border-radius:20px;background:var(--panel);border:1px solid var(--line);color:var(--muted);cursor:pointer}
-  .sf-chip.on{background:#28323f;color:#fff;border-color:#28323f;font-weight:600}
+  .sf-chip.on{background:#6DAE3E;color:#fff;border-color:#6DAE3E;font-weight:600}
   .timeline{padding:12px 14px;display:flex;flex-direction:column;gap:8px}
   .tl-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 13px;display:flex;gap:10px;align-items:flex-start}
-  .tl-card.now{border-color:var(--accent);background:rgba(94,176,255,.07)}
+  .tl-card.now{border-color:var(--accent);background:rgba(109,174,62,.08)}
   .tl-time{font-size:12px;font-weight:700;color:var(--accent);white-space:nowrap;flex:0 0 44px;padding-top:1px}
   .tl-label{font-size:13px;font-weight:600;margin:0 0 2px}
   .tl-spot{font-size:11px;color:var(--accent);margin:0 0 3px;font-weight:600}
-  .tl-desc{font-size:11.5px;color:#c5d4e3;margin:0;line-height:1.5}
-  .now-badge{font-size:10px;background:var(--accent);color:#0f141b;padding:1px 6px;border-radius:20px;vertical-align:middle;margin-left:4px;font-weight:700}
-  .reel-banner{background:rgba(94,176,255,.08);border:1px solid rgba(94,176,255,.2);border-radius:12px;padding:14px;text-align:center}
+  .tl-desc{font-size:11.5px;color:#3A4535;margin:0;line-height:1.5}
+  .now-badge{font-size:10px;background:var(--accent);color:#fff;padding:1px 6px;border-radius:20px;vertical-align:middle;margin-left:4px;font-weight:700}
+  .reel-banner{background:rgba(109,174,62,.08);border:1px solid rgba(109,174,62,.22);border-radius:12px;padding:14px;text-align:center}
   .rb-title{font-size:13px;font-weight:700;margin:0 0 4px}
   .rb-sub{font-size:11.5px;color:var(--muted);margin:0}
   #infoScrollBtn{position:sticky;bottom:0;display:block;width:100%;padding:8px 0;
-    background:linear-gradient(to bottom,transparent,rgba(16,21,28,.95) 40%);
+    background:linear-gradient(to bottom,transparent,rgba(245,248,240,.95) 40%);
     border:none;color:var(--muted);font-size:16px;cursor:pointer;text-align:center;
     margin-top:4px;transition:color .2s}
-  #infoScrollBtn:hover{color:#fff}
+  #infoScrollBtn:hover{color:var(--accent)}
   .spot-lb{border-width:1.5px;cursor:pointer}
   .spot-lb:hover{filter:brightness(1.3)}
   .spot-billboard{position:absolute;transform:translate(-50%,-100%);pointer-events:none;
-    border-radius:8px;overflow:hidden;border:2px solid rgba(255,255,255,.22);
-    box-shadow:0 4px 20px rgba(0,0,0,.6);width:110px;margin-top:-28px}
+    border-radius:8px;overflow:hidden;border:2px solid rgba(100,160,65,.35);
+    box-shadow:0 4px 20px rgba(0,0,0,.25);width:110px;margin-top:-28px}
   .spot-billboard img{display:block;width:100%;height:auto}
 
   /* === 위성이미지 맵 === */
-  #mapWrap{position:absolute;inset:0;overflow:hidden;background:#0a0e13;display:flex;align-items:center;justify-content:center;cursor:grab}
+  #mapWrap{position:absolute;inset:0;overflow:hidden;background:#E8ECE2;display:flex;align-items:center;justify-content:center;cursor:grab}
   #mapWrap.grabbing{cursor:grabbing}
-  #mapInner{width:100%;height:100%;transform-origin:center center;will-change:transform;position:relative}
-  #mapImg{height:100%;width:auto;max-width:none;display:block;user-select:none;-webkit-user-select:none;position:relative}
+  #mapInner{width:100%;height:100%;transform-origin:center center;will-change:transform;display:flex;align-items:stretch;justify-content:center;overflow:hidden}
+  #mapImgWrap{position:relative;aspect-ratio:507/724;flex-shrink:0;overflow:hidden}
+  #mapImg{width:100%;height:100%;display:block;user-select:none;-webkit-user-select:none}
   #mapPins{position:absolute;inset:0;pointer-events:none}
   .map-pin{position:absolute;transform:translate(-50%,-100%);cursor:pointer;pointer-events:auto;
     display:flex;flex-direction:column;align-items:center;transition:transform .15s;z-index:10;
@@ -187,10 +188,10 @@
     justify-content:center;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,.6);
     border:2px solid rgba(255,255,255,.7)}
   .map-pin.sel .pin-dot{box-shadow:0 0 0 3px rgba(255,255,255,.5),0 2px 10px rgba(0,0,0,.7)}
-  .map-pin .pin-tail{width:2px;height:7px;background:rgba(255,255,255,.8);margin:0 auto}
+  .map-pin .pin-tail{width:2px;height:7px;background:rgba(55,90,35,.55);margin:0 auto}
   .map-pin .pin-name{font-size:9.5px;font-weight:700;color:#fff;
-    text-shadow:0 1px 3px #000,0 0 6px #000;margin-top:2px;white-space:nowrap;
-    background:rgba(0,0,0,.4);padding:1px 5px;border-radius:8px}
+    text-shadow:0 1px 2px rgba(0,0,0,.5);margin-top:2px;white-space:nowrap;
+    background:rgba(55,90,35,.80);padding:1px 5px;border-radius:8px}
 </style>
 </head>
 <body>
@@ -211,14 +212,16 @@
       <div id="labels" style="display:none"></div>
       <div id="mapWrap">
         <div id="mapInner">
-          <img id="mapImg" src="수양관2.jpg" alt="수양관 위성사진" draggable="false">
-          <div id="mapPins"></div>
+          <div id="mapImgWrap">
+            <img id="mapImg" src="수양관2.jpg" alt="수양관 위성사진" draggable="false">
+            <div id="mapPins"></div>
+          </div>
         </div>
       </div>
       <div class="hud" id="info">
         <div id="infoHandle"></div>
         <h2 id="iTitle"></h2>
-        <p class="sub" id="iSub">핀을 탭하면 상세 정보를 확인할 수 있습니다</p>
+        <p class="sub" id="iSub"></p>
         <div class="desc" id="iDesc"></div>
         <button id="infoScrollBtn">▼</button>
       </div>
@@ -1024,33 +1027,38 @@ function setMode(m){
    mx(px[0]) = (px[0]-550)*0.22,  mz(px[1]) = (px[1]-650)*0.22  */
 var SPOTS = [
   { id:'water_main', nm:'물놀이존', sub:'다시 사랑하水', zone:'water',
-    px:[815,914], mapPos:[45,60], img:'물놀이존.jpg',
+    px:[815,914], mapPos:[40,60], img:'물놀이존1.jpg',
     location:'잔디 운동장', color:'#2196F3', icon:'🌊',
-    items:['에어바운스 워터슬라이드 × 2','워터캐논 × 2','기본 풀장 × 1'],
+    items:[
+      '🎢 물놀이 흥 상위일체 — 워터슬라이드 & 워터캐논 & BGM',
+      '🎮 우리 팀 모두 함께 즐기는 — 미니게임 + 자유수영',
+      '🥤 목마른 사슴 같은 청년부를 위해 준비된 이온음료'
+    ],
     schedule:'1부 14:10–15:00 (2·3교구) / 2부 15:10–16:00 (1·4교구)',
+    tip:'준비물: 대형 타월 + 물놀이 복장 (아쿠아슈즈 · 래쉬가드 · 모자 등)',
     notice:'입수 전 준비운동 필수' },
   { id:'photo_trail', nm:'포토존 ①', sub:'헤세드 액자 프레임', zone:'photo',
-    px:[700,350], mapPos:[54,90], img:'포토존.jpg',
+    px:[700,350], mapPos:[45,92], img:'포토존1.png',
     location:'산책로', color:'#E91E63', icon:'📸',
     items:['헤세드 액자 프레임 설치'],
     tip:'프레임 안에 서서 팀원들과 단체 사진!' },
   { id:'photo_2', nm:'포토존②', sub:'헤세드 포토 프레임', zone:'photo',
-    px:[700,350], mapPos:[37,75], img:'포토존.jpg',
+    px:[700,350], mapPos:[35,78], img:'포토존.jpg',
     location:'쉼터존 인근', color:'#FFC107', icon:'📷',
     items:['헤세드 포토 프레임 체험'],
     tip:'포토존 ①과 함께 이용하세요!' },
   { id:'photo_shelter', nm:'쉼터존', sub:'헤세드 히브리어 + 타투 스티커', zone:'shelter',
-    px:[490,470], mapPos:[40,90], img:'쉼터존.jpg',
+    px:[490,470], mapPos:[35,92], img:'쉼터존1.png',
     location:'벧엘관 옆 야외 쉼터', color:'#26C6DA', icon:'🪑',
     items:['헤세드 히브리어 포토존','헤세드 타투 스티커 체험','야외 의자 & 해먹 휴식'],
     tip:'타투 스티커 붙이고 물놀이 가면 분위기 UP!' },
   { id:'photo_indoor', nm:'키캡&키링(대식당 뒤)', sub:'거울 셀카 + 키캡 키링', zone:'shelter',
-    px:[800,680], mapPos:[60,18], img:'키링.jpg',
+    px:[800,680], mapPos:[52,18], img:'키링.jpg',
     location:'대식당 뒤 실내', color:'#26C6DA', icon:'⌨️',
     items:['거울 셀카 & 헤세드 포토존','키캡 키링 만들기','4가지 디자인 중 선택 후 조립'],
     tip:'키캡은 준비위원에게 직접 받아서 조립!' },
   { id:'board_game', nm:'보드게임존(구식당)', sub:'실내에서 시원하게!', zone:'board',
-    px:[750,510], mapPos:[77,65],
+    px:[750,510], mapPos:[70,65],
     location:'구식당 (카페 병행 운영)', color:'#FF9800', icon:'🎲',
     items:['보드게임 & 나눔카드 대여','관리대장 작성 후 대여 · 반납 필수','카페 정상 운영'],
     }
@@ -1162,8 +1170,11 @@ SPOTS.forEach(function(s){
   var MIN = 1, MAX = 5;
 
   function clamp(s, x, y){
-    var hw = wrap.clientWidth  * (s - 1) / 2;
-    var hh = wrap.clientHeight * (s - 1) / 2;
+    var imgEl = document.getElementById('mapImg');
+    var nW = imgEl.naturalWidth || 507, nH = imgEl.naturalHeight || 724;
+    var rW = nW * wrap.clientHeight / nH;
+    var hw = Math.max(0, (rW * s - wrap.clientWidth)  / 2);
+    var hh = Math.max(0, (wrap.clientHeight * s - wrap.clientHeight) / 2);
     return { x: Math.max(-hw, Math.min(hw, x)), y: Math.max(-hh, Math.min(hh, y)) };
   }
   function apply(){
@@ -1243,9 +1254,9 @@ function buildMapPins(){
     var pin = document.createElement('div');
     pin.className = 'map-pin';
     pin.id = 'mpin_' + s.id;
-    /* 초기 배치는 positionMapPins()에서 처리 */
-    pin.dataset.lx = s.mapPos[0];
-    pin.dataset.ly = s.mapPos[1];
+    /* #mapPins가 이미지와 완전히 겹치므로 % 위치는 항상 이미지 기준으로 고정 */
+    pin.style.left = s.mapPos[0] + '%';
+    pin.style.top  = s.mapPos[1] + '%';
     pin.innerHTML =
       '<div class="pin-dot" style="background:' + (s.color||'#607D8B') + '">' + (s.icon||'📍') + '</div>' +
       '<div class="pin-tail"></div>' +
@@ -1258,31 +1269,8 @@ function buildMapPins(){
     });
     pinsEl.appendChild(pin);
   });
-  positionMapPins();
 }
 
-/* 이미지 object-fit:contain 여백을 보정해 핀을 실제 이미지 위에 배치 */
-function positionMapPins(){
-  var wrap = document.getElementById('mapWrap');
-  var img  = document.getElementById('mapImg');
-  var pins = document.querySelectorAll('.map-pin');
-  if(!wrap || !img || !pins.length) return;
-  var wW = wrap.clientWidth, wH = wrap.clientHeight;
-  var nW = img.naturalWidth  || 507;
-  var nH = img.naturalHeight || 724;
-  /* 높이 기준 렌더 크기 계산 */
-  var scale = wH / nH;
-  var rW = nW * scale, rH = wH;
-  var offX = (wW - rW) / 2, offY = 0;
-  pins.forEach(function(pin){
-    var lx = parseFloat(pin.dataset.lx);
-    var ly = parseFloat(pin.dataset.ly);
-    var px = offX + rW * lx / 100;
-    var py = offY + rH * ly / 100;
-    pin.style.left = px + 'px';
-    pin.style.top  = py + 'px';
-  });
-}
 
 function syncInfoToMapDark(){
   if(window.innerWidth > 640) return;
@@ -1295,9 +1283,19 @@ function syncInfoToMapDark(){
   info.style.minHeight = '';
 }
 
-document.getElementById('mapImg') && document.getElementById('mapImg').addEventListener('load', function(){ positionMapPins(); syncInfoToMapDark(); });
-window.addEventListener('resize', function(){ positionMapPins(); syncInfoToMapDark(); });
+window.addEventListener('resize', syncInfoToMapDark);
 buildMapPins();
+/* 이미지 실제 비율로 aspect-ratio 갱신 → 핀 위치 정확도 보장 */
+(function(){
+  var img  = document.getElementById('mapImg');
+  var wrap = document.getElementById('mapImgWrap');
+  function applyAR(){
+    if(img && img.naturalWidth && wrap)
+      wrap.style.aspectRatio = img.naturalWidth + '/' + img.naturalHeight;
+  }
+  if(img) img.addEventListener('load', applyAR);
+  applyAR();
+})();
 syncInfoToMapDark();
 document.getElementById('info').style.display = 'none';
 
